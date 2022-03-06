@@ -15,7 +15,7 @@ namespace DecryptAndEncrypt
     {
 
         private Boolean cesarCodeEnabled = false;
-        private Boolean md5CodeEnabled = false;
+        private Boolean desCodeEnabled = false;
 
         public EncryptAndDecrypt()
         {
@@ -45,12 +45,12 @@ namespace DecryptAndEncrypt
         {
             if (desCode.Checked)
             {
-                md5CodeEnabled = true;
+                desCodeEnabled = true;
                 cesarCode.Checked = false;
                 cesarCodeShift.Enabled = false;
             } else
             {
-                md5CodeEnabled = false;
+                desCodeEnabled = false;
                 cesarCodeShift.Enabled = true;
             }
 
@@ -78,7 +78,7 @@ namespace DecryptAndEncrypt
                 rightTextBox.AppendText(CesarCipher.encrypt(leftTextBox.Text, Convert.ToInt32(cesarCodeShift.Value)));
             }
 
-            if (desTextHash.TextLength > 0 && md5CodeEnabled == true)
+            if (desTextHash.TextLength > 0 && desCodeEnabled == true)
             {
                 rightTextBox.AppendText(DESCipher.encrypt(leftTextBox.Text, desTextHash.Text));
             }
@@ -92,7 +92,7 @@ namespace DecryptAndEncrypt
                 rightTextBox.AppendText(CesarCipher.decrypt(leftTextBox.Text, Convert.ToInt32(cesarCodeShift.Value)));
             }
 
-            if (desTextHash.TextLength > 0 && md5CodeEnabled == true)
+            if (desTextHash.TextLength > 0 && desCodeEnabled == true)
             {
                 rightTextBox.AppendText(DESCipher.decrypt(leftTextBox.Text,desTextHash.Text));
             }
