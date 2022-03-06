@@ -64,7 +64,7 @@
             this.desCode.TabStop = true;
             this.desCode.Text = "Szyfr DES";
             this.desCode.UseVisualStyleBackColor = true;
-            this.desCode.CheckedChanged += new System.EventHandler(this.md5Code_CheckedChanged);
+            this.desCode.CheckedChanged += new System.EventHandler(this.desCode_CheckedChanged);
             // 
             // cesarCodeLabel
             // 

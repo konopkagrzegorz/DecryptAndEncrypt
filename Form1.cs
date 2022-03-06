@@ -41,7 +41,7 @@ namespace DecryptAndEncrypt
 
         }
 
-        private void md5Code_CheckedChanged(object sender, EventArgs e)
+        private void desCode_CheckedChanged(object sender, EventArgs e)
         {
             if (desCode.Checked)
             {
