@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DecryptAndEncrypt
 {
-    class MD5Cipher
+    class DESCipher
     {
 
         public static string decrypt(string text, string hash)

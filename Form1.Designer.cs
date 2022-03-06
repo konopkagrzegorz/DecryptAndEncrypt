@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cesarCode = new System.Windows.Forms.RadioButton();
-            this.md5Code = new System.Windows.Forms.RadioButton();
+            this.desCode = new System.Windows.Forms.RadioButton();
             this.cesarCodeLabel = new System.Windows.Forms.Label();
             this.openFileButton = new System.Windows.Forms.Button();
             this.leftTextBox = new System.Windows.Forms.RichTextBox();
@@ -38,8 +38,8 @@
             this.rightTextBox = new System.Windows.Forms.RichTextBox();
             this.decryptButton = new System.Windows.Forms.Button();
             this.clearAllButton = new System.Windows.Forms.Button();
-            this.md5CodeLabel = new System.Windows.Forms.Label();
-            this.md5TextHash = new System.Windows.Forms.TextBox();
+            this.desCodeLabel = new System.Windows.Forms.Label();
+            this.desTextHash = new System.Windows.Forms.TextBox();
             this.cesarCodeShift = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.cesarCodeShift)).BeginInit();
             this.SuspendLayout();
@@ -55,16 +55,16 @@
             this.cesarCode.UseVisualStyleBackColor = true;
             this.cesarCode.CheckedChanged += new System.EventHandler(this.cesarCode_CheckedChanged);
             // 
-            // md5Code
+            // desCode
             // 
-            this.md5Code.Location = new System.Drawing.Point(741, 12);
-            this.md5Code.Name = "md5Code";
-            this.md5Code.Size = new System.Drawing.Size(122, 23);
-            this.md5Code.TabIndex = 1;
-            this.md5Code.TabStop = true;
-            this.md5Code.Text = "Szyfr MD5";
-            this.md5Code.UseVisualStyleBackColor = true;
-            this.md5Code.CheckedChanged += new System.EventHandler(this.md5Code_CheckedChanged);
+            this.desCode.Location = new System.Drawing.Point(741, 12);
+            this.desCode.Name = "desCode";
+            this.desCode.Size = new System.Drawing.Size(122, 23);
+            this.desCode.TabIndex = 1;
+            this.desCode.TabStop = true;
+            this.desCode.Text = "Szyfr DES";
+            this.desCode.UseVisualStyleBackColor = true;
+            this.desCode.CheckedChanged += new System.EventHandler(this.md5Code_CheckedChanged);
             // 
             // cesarCodeLabel
             // 
@@ -135,21 +135,21 @@
             this.clearAllButton.UseVisualStyleBackColor = true;
             this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
             // 
-            // md5CodeLabel
+            // desCodeLabel
             // 
-            this.md5CodeLabel.AutoSize = true;
-            this.md5CodeLabel.Location = new System.Drawing.Point(737, 38);
-            this.md5CodeLabel.Name = "md5CodeLabel";
-            this.md5CodeLabel.Size = new System.Drawing.Size(98, 19);
-            this.md5CodeLabel.TabIndex = 10;
-            this.md5CodeLabel.Text = "Podaj hash";
+            this.desCodeLabel.AutoSize = true;
+            this.desCodeLabel.Location = new System.Drawing.Point(737, 38);
+            this.desCodeLabel.Name = "desCodeLabel";
+            this.desCodeLabel.Size = new System.Drawing.Size(102, 19);
+            this.desCodeLabel.TabIndex = 10;
+            this.desCodeLabel.Text = "Podaj klucz";
             // 
-            // md5TextHash
+            // desTextHash
             // 
-            this.md5TextHash.Location = new System.Drawing.Point(731, 63);
-            this.md5TextHash.Name = "md5TextHash";
-            this.md5TextHash.Size = new System.Drawing.Size(141, 27);
-            this.md5TextHash.TabIndex = 11;
+            this.desTextHash.Location = new System.Drawing.Point(731, 63);
+            this.desTextHash.Name = "desTextHash";
+            this.desTextHash.Size = new System.Drawing.Size(141, 27);
+            this.desTextHash.TabIndex = 11;
             // 
             // cesarCodeShift
             // 
@@ -179,8 +179,8 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.cesarCodeShift);
-            this.Controls.Add(this.md5TextHash);
-            this.Controls.Add(this.md5CodeLabel);
+            this.Controls.Add(this.desTextHash);
+            this.Controls.Add(this.desCodeLabel);
             this.Controls.Add(this.clearAllButton);
             this.Controls.Add(this.decryptButton);
             this.Controls.Add(this.rightTextBox);
@@ -188,7 +188,7 @@
             this.Controls.Add(this.leftTextBox);
             this.Controls.Add(this.openFileButton);
             this.Controls.Add(this.cesarCodeLabel);
-            this.Controls.Add(this.md5Code);
+            this.Controls.Add(this.desCode);
             this.Controls.Add(this.cesarCode);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -205,7 +205,7 @@
         #endregion
 
         private System.Windows.Forms.RadioButton cesarCode;
-        private System.Windows.Forms.RadioButton md5Code;
+        private System.Windows.Forms.RadioButton desCode;
         private System.Windows.Forms.Label cesarCodeLabel;
         private System.Windows.Forms.Button openFileButton;
         private System.Windows.Forms.RichTextBox leftTextBox;
@@ -214,8 +214,8 @@
         private System.Windows.Forms.RichTextBox rightTextBox;
         private System.Windows.Forms.Button decryptButton;
         private System.Windows.Forms.Button clearAllButton;
-        private System.Windows.Forms.Label md5CodeLabel;
-        private System.Windows.Forms.TextBox md5TextHash;
+        private System.Windows.Forms.Label desCodeLabel;
+        private System.Windows.Forms.TextBox desTextHash;
         private System.Windows.Forms.NumericUpDown cesarCodeShift;
     }
 }

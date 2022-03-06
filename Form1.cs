@@ -31,19 +31,19 @@ namespace DecryptAndEncrypt
             if (cesarCode.Checked)
             {
                 cesarCodeEnabled = true;
-                md5Code.Checked = false;
-                md5TextHash.Enabled = false;
+                desCode.Checked = false;
+                desTextHash.Enabled = false;
             } else
             {
                 cesarCodeEnabled = false;
-                md5TextHash.Enabled = true;
+                desTextHash.Enabled = true;
             }
 
         }
 
         private void md5Code_CheckedChanged(object sender, EventArgs e)
         {
-            if (md5Code.Checked)
+            if (desCode.Checked)
             {
                 md5CodeEnabled = true;
                 cesarCode.Checked = false;
@@ -78,9 +78,9 @@ namespace DecryptAndEncrypt
                 rightTextBox.AppendText(CesarCipher.encrypt(leftTextBox.Text, Convert.ToInt32(cesarCodeShift.Value)));
             }
 
-            if (md5TextHash.TextLength > 0 && md5CodeEnabled == true)
+            if (desTextHash.TextLength > 0 && md5CodeEnabled == true)
             {
-                rightTextBox.AppendText(MD5Cipher.encrypt(leftTextBox.Text, md5TextHash.Text));
+                rightTextBox.AppendText(DESCipher.encrypt(leftTextBox.Text, desTextHash.Text));
             }
         }
 
@@ -92,9 +92,9 @@ namespace DecryptAndEncrypt
                 rightTextBox.AppendText(CesarCipher.decrypt(leftTextBox.Text, Convert.ToInt32(cesarCodeShift.Value)));
             }
 
-            if (md5TextHash.TextLength > 0 && md5CodeEnabled == true)
+            if (desTextHash.TextLength > 0 && md5CodeEnabled == true)
             {
-                rightTextBox.AppendText(MD5Cipher.decrypt(leftTextBox.Text,md5TextHash.Text));
+                rightTextBox.AppendText(DESCipher.decrypt(leftTextBox.Text,desTextHash.Text));
             }
         }
 
@@ -103,7 +103,7 @@ namespace DecryptAndEncrypt
             leftTextBox.Clear();
             rightTextBox.Clear();
             cesarCodeShift.Value = cesarCodeShift.Minimum;
-            md5TextHash.Clear();
+            desTextHash.Clear();
             rightTextBox.Clear();
             encryptButton.Enabled = false;
             decryptButton.Enabled = false;
