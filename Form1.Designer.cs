@@ -41,6 +41,8 @@
             this.desCodeLabel = new System.Windows.Forms.Label();
             this.desTextHash = new System.Windows.Forms.TextBox();
             this.cesarCodeShift = new System.Windows.Forms.NumericUpDown();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveToFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cesarCodeShift)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@
             // 
             // encryptButton
             // 
-            this.encryptButton.Location = new System.Drawing.Point(370, 63);
+            this.encryptButton.Location = new System.Drawing.Point(370, 58);
             this.encryptButton.Name = "encryptButton";
             this.encryptButton.Size = new System.Drawing.Size(132, 35);
             this.encryptButton.TabIndex = 6;
@@ -117,7 +119,7 @@
             // 
             // decryptButton
             // 
-            this.decryptButton.Location = new System.Drawing.Point(370, 110);
+            this.decryptButton.Location = new System.Drawing.Point(370, 99);
             this.decryptButton.Name = "decryptButton";
             this.decryptButton.Size = new System.Drawing.Size(132, 35);
             this.decryptButton.TabIndex = 8;
@@ -173,11 +175,22 @@
             0,
             0});
             // 
+            // saveToFile
+            // 
+            this.saveToFile.Location = new System.Drawing.Point(370, 140);
+            this.saveToFile.Name = "saveToFile";
+            this.saveToFile.Size = new System.Drawing.Size(132, 39);
+            this.saveToFile.TabIndex = 13;
+            this.saveToFile.Text = "Zapisz plik";
+            this.saveToFile.UseVisualStyleBackColor = true;
+            this.saveToFile.Click += new System.EventHandler(this.saveToFile_Click);
+            // 
             // EncryptAndDecrypt
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.saveToFile);
             this.Controls.Add(this.cesarCodeShift);
             this.Controls.Add(this.desTextHash);
             this.Controls.Add(this.desCodeLabel);
@@ -217,6 +230,8 @@
         private System.Windows.Forms.Label desCodeLabel;
         private System.Windows.Forms.TextBox desTextHash;
         private System.Windows.Forms.NumericUpDown cesarCodeShift;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button saveToFile;
     }
 }
 

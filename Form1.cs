@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,6 +25,7 @@ namespace DecryptAndEncrypt
             rightTextBox.Enabled = false;
             encryptButton.Enabled = false;
             decryptButton.Enabled = false;
+            saveToFile.Enabled = false;
         }
 
         private void cesarCode_CheckedChanged(object sender, EventArgs e)
@@ -65,6 +67,7 @@ namespace DecryptAndEncrypt
             {
                 encryptButton.Enabled = true;
                 decryptButton.Enabled = true;
+                saveToFile.Enabled = true;
                 string path = openFileDialog1.FileName;
                 string text = System.IO.File.ReadAllText(path);
                 leftTextBox.AppendText(text);
@@ -107,6 +110,18 @@ namespace DecryptAndEncrypt
             rightTextBox.Clear();
             encryptButton.Enabled = false;
             decryptButton.Enabled = false;
+            saveToFile.Enabled = false;
+        }
+
+        private void saveToFile_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "Text|*.txt";
+            DialogResult dialogResult = saveFileDialog1.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                string path = saveFileDialog1.FileName;
+                File.WriteAllText(path,rightTextBox.Text);
+            }
         }
     }
 }
